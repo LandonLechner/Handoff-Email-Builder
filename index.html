@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Text Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+    	<h1>Handoff Email Builder</h1>
+	    <form>
+	        Practice name <input autocomplete="off" type="text" id="practice" style="width:250px">
+    	    <br>
+    	    Client name <input autocomplete="off" type="text" id="client" style="width:250px">
+    	    <br>
+    	    Closed won date <input autocomplete="off" type="date" id="closedWonDate">
+    	    <br>
+    	    PM <select name="pm" id="pm">
+                <option value="Becca Freeman">Becca Freeman</option>
+                <option value="Jessica Wright">Jessica Wright</option>
+            </select>
+            <br>    
+    	    CSM <select name="csm" id="csm">
+	            <option value="Amanda Baugh">Amanda Baugh</option>
+                <option value="Cassandra Wilson">Cassandra Wilson</option>
+                <option value="Emily Kearley">Emily Kearley</option>
+                <option value="Ernesto Valles">Ernesto Valles</option>
+                <option value="Isaiah Pointer">Isaiah Pointer</option>
+                <option value="Isiah Flora">Isiah Flora</option>
+                <option value="Jon Ketchum">Jon Ketchum</option>
+                <option value="Luis Morabito">Luis Morabito</option>                    
+                <option value="Samantha Garrison">Samantha Garrison</option>
+                <option value="Sam Preston">Sam Preston</option>
+                <option value="Tjay Davenport">Tjay Davenport</option>
+            </select>
+	    </form>
+        <hr>
+        <button id="copyButton">Copy Subject Line</button>
+        <p id="emailSubject"></p>
+        <button id="copyButton2">Copy Email Body</button>
+        <p id="emailBody"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
