@@ -3,9 +3,11 @@ body {
     display: flex;
     justify-content: center;
     margin: 0;
+    background-color: bisque;
 }
 
 #outerBorder {
+    background-color: white;
     padding: 50px 200px;
     width: 100%;
     margin: 50px;
