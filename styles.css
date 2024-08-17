@@ -1,19 +1,31 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    justify-content: center;
+    margin: 0;
 }
 
-.container {
+#outerBorder {
+    padding: 50px 200px;
+    width: 100%;
+    margin: 50px;
+    border: 1px solid #ddd;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
     margin-left: 10px;
-    margin-top: -20px;
-}
-
-hr {
-    width: 96vw;
 }
 
 form input, form select {
-    margin-bottom: 2px;
+    margin-bottom: 5px;
 }
 
 button {
@@ -33,7 +45,7 @@ button {
 }
 
 button:hover {
-    background-color: #DD3900;
+    background-color: #CC3900;
 }
 
 button:active {
