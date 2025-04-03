@@ -1,18 +1,36 @@
 window.onload = function ()
 {
+    
+    const proceduresToggle = document.querySelector("#proceduresToggle");
+    const services = document.querySelector("#services");
+    let isProcedures = false;
+    
+    proceduresToggle.addEventListener('click', function() {
+        if (isProcedures) {
+            proceduresToggle.classList.remove("proceduresToggleOn");
+            proceduresToggle.classList.add("proceduresToggleOff");
+            services.style.display = "block";
+            isProcedures = false;
+        } else {
+            proceduresToggle.classList.add("proceduresToggleOn");
+            proceduresToggle.classList.remove("proceduresToggleOff");
+            services.style.display = "none";
+            isProcedures = true;
+        }
+        createEmail();
+        return isProcedures;
+    });
 
-	document.addEventListener("input", createEmail);
+	document.addEventListener('input', createEmail);
 
     function createEmail () {
-        let practice = document.querySelector("#practice").value;
-        let client = document.querySelector("#client").value;
-        let closedWonDate = document.querySelector("#closedWonDate").value;
-        let closedWonDay = closedWonDate.slice(8,10);
-        let closedWonMonth = closedWonDate.slice(5,7);
-        let closedWonYear = closedWonDate.slice(2,4);
-        let reorderedDate = `${closedWonMonth}/${closedWonDay}/${closedWonYear}`;
-        let pm = document.querySelector("#pm").value;
-        let csm = document.querySelector("#csm").value;
+        const practice = document.querySelector("#practice").value;
+        const client = document.querySelector("#client").value;
+        const closedWonDate = document.querySelector("#closedWonDate").value;
+        const reorderedDate = `${closedWonDate.slice(5,7)}/${closedWonDate.slice(8,10)}/${closedWonDate.slice(2,4)}`;
+        const pm = document.querySelector("#pm").value;
+        const csm = document.querySelector("#csm").value;
+        const procedureQuantity = Number(document.getElementById("serviceQuantity").value);
         let heshe;
         let hesheUpper;
         let himher;
@@ -26,6 +44,17 @@ window.onload = function ()
             hesheUpper = "He";
             himher = "him";
         }
+        
+        if (isProcedures) {
+            proceduresLink = "";
+        } else {
+            proceduresLink = `<strong>To prepare for our kickoff call, please complete the 
+            <a href="https://forms.monday.com/forms/a5067d536c614bf4656e6bca66414530?r=use1">Procedure List Form</a>, 
+            which will guide the creation of your website's service list. 
+            As you select services, keep in mind you are contracted for ${procedureQuantity}. 
+            This will allow us to create a focused and effective service list for your website</strong>.
+            <br><br>`;
+        }
             
         let emailSubject = document.querySelector("#emailSubject").innerHTML = 
             `<p>${practice} - Welcome to DoctorLogic!</p>`;
@@ -34,10 +63,11 @@ window.onload = function ()
         document.querySelector('#copyButton2').style.display = "block";
         
         let emailBody = document.querySelector("#emailBody").innerHTML =
-            `<p>${client},
+            `${client},
             <br>
             <br>
             Congratulations! It's my pleasure to officially welcome you to DoctorLogic!
+            <br>
             <br>
             Our team is excited to kick off this project with you.
             I have copied ${pm} from our Implementation team on this email.
@@ -64,68 +94,45 @@ window.onload = function ()
             best practices, performance reporting, and product updates.
             <br>
             <br>
+            ${proceduresLink}
             Thanks for choosing DoctorLogic. We are proud to partner with you for your digital marketing needs!
-            </p>`;
+            `;
     }
-	
-	document.getElementById('copyButton').addEventListener('click', function() {
-        // Get the text from the <p> tag
-        let subjectLine = document.getElementById('emailSubject');
-        let textToCopy = emailSubject.innerText;
-        
-        // Create a temporary textarea element to hold the text to copy
-        const tempTextArea = document.createElement('textarea');
-        tempTextArea.value = textToCopy;
-        
-        // Append the textarea to the body (it has to be added to the DOM to be selected)
-        document.body.appendChild(tempTextArea);
-        
-        // Select the text
-        tempTextArea.select();
-        tempTextArea.setSelectionRange(0, 99999); // For mobile devices
-        
-        // Copy the text to the clipboard
-        document.execCommand('copy');
-        
-        // Remove the temporary textarea
-        document.body.removeChild(tempTextArea);
-        
-        document.querySelector('#copyButton').innerText = "Copied!";
-        
-        // Hide the message after 1300ms
-        setTimeout(() => {
-            document.querySelector('#copyButton').innerText = "Copy Subject Line";
+    
+    //copy functionality
+    document.getElementById('copyButton').addEventListener('click', async function() {
+        let subjectElement = document.getElementById('emailSubject');
+        let subjectText = subjectElement.innerText;
+    
+        try {
+            await navigator.clipboard.writeText(subjectText);
+    
+            document.querySelector('#copyButton').innerText = "Copied!";
+            setTimeout(() => {
+                document.querySelector('#copyButton').innerText = "Copy Subject Line";
             }, 1300);
+        } catch (err) {
+            console.error("Failed to copy:", err);
+        }
     });
 
-    document.getElementById('copyButton2').addEventListener('click', function() {
-        // Get the text from the <p> tag
+    document.getElementById('copyButton2').addEventListener('click', async function() {
         let emailBody = document.getElementById('emailBody');
-        let textToCopy2 = emailBody.innerText;
-        
-        // Create a temporary textarea element to hold the text to copy
-        const tempTextArea2 = document.createElement('textarea');
-        tempTextArea2.value = textToCopy2;
-        
-        // Append the textarea to the body (it has to be added to the DOM to be selected)
-        document.body.appendChild(tempTextArea2);
-        
-        // Select the text
-        tempTextArea2.select();
-        tempTextArea2.setSelectionRange(0, 99999); // For mobile devices
-        
-        // Copy the text to the clipboard
-        document.execCommand('copy');
-        
-        // Remove the temporary textarea
-        document.body.removeChild(tempTextArea2);
-        
-        document.querySelector('#copyButton2').innerText = "Copied!";
-        
-        // Hide the message after 1300ms
-        setTimeout(() => {
-            document.querySelector('#copyButton2').innerText = "Copy Email Body";
-            }, 1300);
-    });
     
+        const blob = new Blob([emailBody.innerHTML], { type: 'text/html' });
+        const data = [new ClipboardItem({ 'text/html': blob })];
+    
+        try {
+            await navigator.clipboard.write(data);
+    
+            document.querySelector('#copyButton2').innerText = "Copied!";
+            
+            setTimeout(() => {
+                document.querySelector('#copyButton2').innerText = "Copy Email Body";
+            }, 1300);
+        } catch (err) {
+            console.error("Failed to copy:", err);
+        }
+    });
+
 };

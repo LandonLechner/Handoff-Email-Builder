@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DL Handoff Email Builder</title>
+    <title>Copy Text Example</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="outerBorder">
     <div class="container">
-        <div id="logo">
-            <img src="https://growth.doctorlogic.com/hs-fs/hubfs/2023%20-%20Logos/Logo%20-%20Blue%20-%20DL.png?width=1163&height=288&name=Logo%20-%20Blue%20-%20DL.png" height="65px">
-            <h1>Handoff Email Builder</h1>
-        </div>
-    	
+    	<h1>Handoff Email Builder</h1>
 	    <form>
-	        <input placeholder="Practice name" autocomplete="off" type="text" id="practice" style="width:250px">
-    	    <br>
-    	    <input placeholder="Client name" autocomplete="off" type="text" id="client" style="width:250px">
-    	    <br>
-    	    Closed won date <input autocomplete="off" type="date" id="closedWonDate">
-    	    <br>
-    	    PM <select name="pm" id="pm">
+	        <input autocomplete="off" type="text" id="practice" placeholder="Practice name" style="width:270px">
+    	    <input autocomplete="off" type="text" id="client" placeholder="Client name" style="width:270px">
+    	    <div>
+        	    <label>Closed won date:</label>
+        	    <input autocomplete="off" type="date" id="closedWonDate">
+    	    </div>
+    	    <button type="button" id="proceduresToggle" class="proceduresToggleOff" style="display:block">The list of procedures HAS BEEN confirmed by the customer</button>
+    	    <div id="services">
+        	    <label>Quantity of Services:</label>
+        	    <input type="number" id="serviceQuantity" value="10" style="width:50px">
+    	    </div>
+    	    <select name="pm" id="pm">
+    	        <option selected disabled value="Select PM">Select PM</option>
                 <option value="Becca Freeman">Becca Freeman</option>
                 <option value="Jessica Wright">Jessica Wright</option>
             </select>
-            <br>    
-    	    CSM <select name="csm" id="csm">
+    	    <select name="csm" id="csm">
+    	        <option selected disabled value="Select CSM">Select CSM</option>
 	            <option value="Amanda Baugh">Amanda Baugh</option>
                 <option value="Cassandra Wilson">Cassandra Wilson</option>
                 <option value="Emily Kearley">Emily Kearley</option>
@@ -41,11 +42,10 @@
             </select>
 	    </form>
         <hr>
-        <button id="copyButton">Copy Subject Line</button>
+        <button class="copyButton" id="copyButton">Copy Subject Line</button>
         <p id="emailSubject"></p>
-        <button id="copyButton2">Copy Email Body</button>
+        <button class="copyButton" id="copyButton2">Copy Email Body</button>
         <p id="emailBody"></p>
-    </div>
     </div>
     <script src="script.js"></script>
 </body>
