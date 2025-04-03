@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copy Text Example</title>
+    <title>MedBest Marketing Handoff Email Builder</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-    	<h1>Handoff Email Builder</h1>
+        <div class="allElements">
+            <div class="title">
+            <img src="./MedBest Logo.png" width="175px">
+            <h1>Handoff Email Builder</h1>
+            </div>
 	    <form>
 	        <input autocomplete="off" type="text" id="practice" placeholder="Practice name" style="width:270px">
     	    <input autocomplete="off" type="text" id="client" placeholder="Client name" style="width:270px">
@@ -23,29 +27,33 @@
     	    </div>
     	    <select name="pm" id="pm">
     	        <option selected disabled value="Select PM">Select PM</option>
-                <option value="Becca Freeman">Becca Freeman</option>
-                <option value="Jessica Wright">Jessica Wright</option>
+                <option value="Jonathan Whitfield">Jonathan Whitfield</option>
+                <option value="Robert Shah">Robert Shah</option>
+                <option value="Ruby Blackwood">Ruby Blackwood</option>
+                <option value="Veronica Holt">Veronica Holt</option>
+                <option value="Marcus Anderson">Marcus Anderson</option>
             </select>
     	    <select name="csm" id="csm">
     	        <option selected disabled value="Select CSM">Select CSM</option>
-	            <option value="Amanda Baugh">Amanda Baugh</option>
-                <option value="Cassandra Wilson">Cassandra Wilson</option>
-                <option value="Emily Kearley">Emily Kearley</option>
-                <option value="Ernesto Valles">Ernesto Valles</option>
-                <option value="Isaiah Pointer">Isaiah Pointer</option>
-                <option value="Isiah Flora">Isiah Flora</option>
-                <option value="Jon Ketchum">Jon Ketchum</option>
-                <option value="Luis Morabito">Luis Morabito</option>                    
-                <option value="Samantha Garrison">Samantha Garrison</option>
-                <option value="Sam Preston">Sam Preston</option>
-                <option value="Tjay Davenport">Tjay Davenport</option>
+	            <option value="Erica Maginnis">Erica Maginnis</option>
+                <option value="Michael Buskirk">Michael Buskirk</option>
+                <option value="Jordan Dalton">Jordan Dalton</option>
+                <option value="Annie Valencia">Annie Valencia</option>
+                <option value="Mary Curtis">Mary Curtis</option>
+                <option value="Johnny Ziegler">Johnny Ziegler</option>
+                <option value="Fernando Sanchez">Fernando Sanchez</option>
+                <option value="Vicki Paul">Vicki Paul</option>                    
+                <option value="Jon Moore">Jon Moore</option>
+                <option value="Cris Hundley">Cris Hundley</option>
+                <option value="Kim Johnson">Kim Johnson</option>
             </select>
 	    </form>
         <hr>
-        <button class="copyButton" id="copyButton">Copy Subject Line</button>
-        <p id="emailSubject"></p>
-        <button class="copyButton" id="copyButton2">Copy Email Body</button>
-        <p id="emailBody"></p>
+            <button class="copyButton" id="copyButton">Copy Subject Line</button>
+            <p id="emailSubject"></p>
+            <button class="copyButton" id="copyButton2">Copy Email Body</button>
+            <p id="emailBody"></p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

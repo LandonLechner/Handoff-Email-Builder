@@ -35,7 +35,7 @@ window.onload = function ()
         let hesheUpper;
         let himher;
         
-        if (pm === "Becca Freeman" || pm === "Jessica Wright") {
+        if (pm === "Veronica Holt" || pm === "Ruby Blackwood") {
             heshe = "she";
             hesheUpper = "She";
             himher = "her";
@@ -49,7 +49,7 @@ window.onload = function ()
             proceduresLink = "";
         } else {
             proceduresLink = `<strong>To prepare for our kickoff call, please complete the 
-            <a href="https://forms.monday.com/forms/a5067d536c614bf4656e6bca66414530?r=use1">Procedure List Form</a>, 
+            <a href="https://www.docusign.com/blog/types-healthcare-consent-forms">Procedure List Form</a>, 
             which will guide the creation of your website's service list. 
             As you select services, keep in mind you are contracted for ${procedureQuantity}. 
             This will allow us to create a focused and effective service list for your website</strong>.
@@ -57,7 +57,7 @@ window.onload = function ()
         }
             
         let emailSubject = document.querySelector("#emailSubject").innerHTML = 
-            `<p>${practice} - Welcome to DoctorLogic!</p>`;
+            `<p>${practice} - Welcome to MedBest!</p>`;
         
         document.querySelector('#copyButton').style.display = "block";
         document.querySelector('#copyButton2').style.display = "block";
@@ -66,7 +66,7 @@ window.onload = function ()
             `${client},
             <br>
             <br>
-            Congratulations! It's my pleasure to officially welcome you to DoctorLogic!
+            Congratulations! It's my pleasure to officially welcome you to MedBest!
             <br>
             <br>
             Our team is excited to kick off this project with you.
@@ -95,7 +95,7 @@ window.onload = function ()
             <br>
             <br>
             ${proceduresLink}
-            Thanks for choosing DoctorLogic. We are proud to partner with you for your digital marketing needs!
+            Thanks for choosing MedBest. We are proud to partner with you for your digital marketing needs!
             `;
     }
     

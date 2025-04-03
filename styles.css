@@ -1,16 +1,41 @@
 body {
     font-family: Arial, sans-serif;
-    padding: 5px;
+    background: gray;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.allElements {
+    max-width: 750px;
+    padding: 0 60px;
+    background: white;
+    box-shadow: 6px 10px 10px -2px rgba(0,0,0,0.3);
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    margin-top: 50px;
 }
 
 h1 {
     text-align: center;
-    margin: 10px 0 25px 0;
     font-weight: 200;
+    margin: 10px 0 50px;
 }
 
 hr {
-    width: 96vw;
+    width: 100%;
+    margin: 20px 0;
 }
 
 form input, form select {
@@ -26,7 +51,7 @@ form input, form select {
 }
 
 #pm {
-    margin-right: 7px;
+    margin: 2px 10px 0 0;
 }
 
 #serviceQuantity {
@@ -54,7 +79,7 @@ form input, form select {
     transform-origin: 0;
 }
         
-.proceduresToggleOff:hover {
+.proceduresToggleOff:hover, .proceduresToggleOn:hover{
     background-position: left bottom;
     background-color: #07A3C8;
     border: 2px solid #07A3C8;
@@ -75,12 +100,6 @@ form input, form select {
     transform: scale(0.95);
     margin-left: 0;
     transform-origin: 0;
-}
-
-.proceduresToggleOn:hover {
-    background-position: left bottom;
-    background-color: #07A3C8;
-    border: 2px solid #07A3C8;
 }
 
 .copyButton {
@@ -116,12 +135,6 @@ form input, form select {
     transform: scale(0.90);
 }
 
-
-#message.hidden, #message2.hidden {
-    display: none;
-}
-
-#message, #message2 {
-    color: green;
-    font-weight: bold;
+#emailBody {
+    padding-bottom: 20px;
 }
