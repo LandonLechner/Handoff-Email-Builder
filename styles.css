@@ -10,7 +10,8 @@ body {
 
 .allElements {
     max-width: 750px;
-    padding: 0 60px;
+    padding-left: clamp(20px, 5vw, 60px);
+    padding-right: clamp(20px, 5vw, 60px);
     background: white;
     box-shadow: 6px 10px 10px -2px rgba(0,0,0,0.3);
     width: 100%;
@@ -51,7 +52,7 @@ form input, form select {
 }
 
 #pm {
-    margin: 2px 10px 0 0;
+    margin: 2px 10px 4px 0;
 }
 
 #serviceQuantity {

@@ -49,7 +49,7 @@ window.onload = function ()
             proceduresLink = "";
         } else {
             proceduresLink = `<strong>To prepare for our kickoff call, please complete the 
-            <a href="https://www.docusign.com/blog/types-healthcare-consent-forms">Procedure List Form</a>, 
+            <a target="_blank" rel="noopener noreferrer" href="https://www.docusign.com/blog/types-healthcare-consent-forms">Procedure List Form</a>, 
             which will guide the creation of your website's service list. 
             As you select services, keep in mind you are contracted for ${procedureQuantity}. 
             This will allow us to create a focused and effective service list for your website</strong>.
